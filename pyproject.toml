@@ -1,3 +1,4 @@
+# This file declares the build environment needed to run setup.py
 [build-system]
 requires = [
     "setuptools>=61.0",
@@ -5,15 +6,3 @@ requires = [
     "numpy>=1.19"
 ]
 build-backend = "setuptools.build_meta"
-
-[project]
-name = "vecalign"
-version = "0.1.0"
-
-[tool.setuptools]
-py-modules = ["vecalign"]
-
-[tool.setuptools.dist-extra-args]
-# This section provides the arguments normally passed to the setup() function.
-# We are explicitly telling it to compile the .pyx files.
-ext_modules = "from setuptools import Extension; from Cython.Build import cythonize; import numpy; ext_modules = cythonize([Extension('dp_utils', ['dp_utils.pyx'], include_dirs=[numpy.get_include()]), Extension('rf_utils', ['rf_utils.pyx'], include_dirs=[numpy.get_include()])])"
