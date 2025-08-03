@@ -1,4 +1,4 @@
-# This file makes the project PEP 518 compliant and provides explicit build instructions.
+# This file makes the project PEP 518 compliant and provides correct build instructions.
 [build-system]
 requires = [
     "setuptools>=61.0",
@@ -8,8 +8,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "vecalign"
-version = "0.1.0" # This is a placeholder version
+version = "0.1.1" # Incremented version for clarity
 
-# This new section tells setuptools exactly what to package.
-[tool.setuptools]
-py-modules = ["vecalign"]
+# This section now tells setuptools to automatically find all packages.
+[tool.setuptools.packages.find]
+where = ["."] # Searches in the root directory
