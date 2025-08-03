@@ -1,0 +1,8 @@
+# This file makes the project PEP 518 compliant.
+# It declares the build-time dependencies needed to install this package.
+[build-system]
+requires = [
+    "setuptools>=61.0",
+    "cython>=0.29"
+]
+build-backend = "setuptools.build_meta"
